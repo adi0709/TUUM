@@ -1,0 +1,27 @@
+{
+  "name": "tuum_api_tests",
+  "version": "1.0.0",
+  "description": "API testing TUUM Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --headed --browser chrome --spec 'cypress/integration/**.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adi0709/TUUM.git"
+  },
+  "keywords": [
+    "API",
+    "testing",
+    "Cypress"
+  ],
+  "author": "Aditya Panwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adi0709/TUUM/issues"
+  },
+  "homepage": "https://github.com/adi0709/TUUM#readme",
+  "devDependencies": {
+    "cypress": "^9.5.3"
+  }
+}
