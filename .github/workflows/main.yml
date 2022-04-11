@@ -10,13 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: install CI
         run: npm ci
-
       - name: Install cypress and verify
         run: npm install
-
       - name: Run Cypress Tests
         run: npm run test
         continue-on-error: false
