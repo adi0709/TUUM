@@ -4,6 +4,9 @@ const requestData = require("../../fixtures/requestValues.json");
 let accessToken;
 let $accountId;
 let $personId;
+let $iban;
+let $defaultCurrencyCode;
+let $customerGroupCode;
 let $personName;
 let $balance;
 
@@ -56,6 +59,9 @@ class Requests {
       $accountId = $res.body.data.accountId;
       $personId = $res.body.data.personId;
       $personName = $res.body.data.personName;
+      $iban = $res.body.data.iban;
+      $defaultCurrencyCode = $res.body.data.defaultCurrencyCode;
+      $customerGroupCode = $res.body.data.customerGroupCode;
     });
   }
   accountCreationValidation() {
@@ -63,6 +69,9 @@ class Requests {
     expect($accountId).to.not.be.null;
     expect($personId).to.eql(requestData.masterAccountId);
     expect($personName).to.eql(requestData.personName);
+    expect($iban).to.not.be.undefined;
+    expect($defaultCurrencyCode).to.eql(requestData.currencyCode);
+    expect($customerGroupCode).to.eql(requestData.customerGroupCode);
   }
   getAccountBalance() {
     cy.request({
